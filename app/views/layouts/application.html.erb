@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RailsTaskManager</title>
-    <%= csrf_meta_tags %>
+<head>
+ <title>RailsTaskManager</title>
+ <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+ <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+ <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <body>
-    <%= yield %>
-  </body>
-</html>
+</head>
+<body>
+ <div class="header-wrapper">
+   <div class="container header-container text-center">
+     <h1>Task Manager</h1>
+     <h2>What do you want to do?</h2>
+   </div>
+ </div>
+
+
+ <div class = text-center>
+  <%= link_to 'List', tasks_path, class: "btn btn-primary btn-lg active" %>
+  <%= link_to 'Add', tasks_new_path, class: "btn btn-primary btn-lg active" %>
+</div>
+
+
+<div class="tab-content text-center inline">
+ <%= yield %>
+</div>
+
+
+</body>
